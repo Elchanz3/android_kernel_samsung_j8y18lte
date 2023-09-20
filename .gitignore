@@ -104,3 +104,4 @@ out/arch/arm64/include/generated/asm/termbits.h
 /out
 build.log
 *.zip
+*.gz-dtb
