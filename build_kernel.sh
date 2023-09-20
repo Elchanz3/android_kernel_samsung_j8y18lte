@@ -19,6 +19,7 @@ DIFF=$(($DATE_END - $DATE_START))
 if [[ -f "$IMAGE" ]]; then
 	rm AnyKernel3/*.zip > /dev/null 2>&1
 	cp $IMAGE AnyKernel3/Image.gz
+	cp $DTB_OUT AnyKernel3/Image.gz-dtb
 	cd AnyKernel3
 	zip -r9 Kernel-J8-beta.zip .
 fi
