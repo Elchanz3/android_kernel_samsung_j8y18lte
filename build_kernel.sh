@@ -1,20 +1,19 @@
 
 #!/bin/bash
 
-export PATH=/home/chanz22/Imagens/aarch64-linux-android-4.9/bin:$PATH
+make clean && make mrproper
+
+export PATH=/home/chanz22/tc/gcc-linaro-6.5.0/bin:$PATH
 # export SEC_BUILD_OPTION_HW_REVISION=02
 
 mkdir out
 
-make -C $(pwd) O=$(pwd)/out ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- KCFLAGS=-mno-android VARIANT_DEFCONFIG=sdm450_sec_j8y18lte_swa_open_defconfig sdm450_sec_defconfig SELINUX_DEFCONFIG=selinux_defconfig SELINUX_LOG_DEFCONFIG=selinux_log_defconfig 
+make -C $(pwd) O=$(pwd)/out ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- VARIANT_DEFCONFIG=j8y18lte_defconfig sdm450_sec_defconfig SELINUX_DEFCONFIG=selinux_defconfig SELINUX_LOG_DEFCONFIG=selinux_log_defconfig
 
-make -j12 -C $(pwd) O=$(pwd)/out ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- KCFLAGS=-mno-android
+make -j12 -C $(pwd) O=$(pwd)/out ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-
 
 IMAGE="out/arch/arm64/boot/Image.gz"
 DTB_OUT="out/arch/arm64/boot/Image.gz-dtb"
-
-DATE_END=$(date +"%s")
-DIFF=$(($DATE_END - $DATE_START))
 
 if [[ -f "$IMAGE" ]]; then
 	rm AnyKernel3/*.zip > /dev/null 2>&1
