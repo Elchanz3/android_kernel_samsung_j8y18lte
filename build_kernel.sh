@@ -6,6 +6,8 @@ export PATH=/home/chanz22/Imagens/aarch64-linux-android-4.9/bin:$PATH
 
 mkdir out
 
+KERNEL_MAKE_ENV="LOCALVERSION=-Element4-v0.1"
+
 make -C $(pwd) O=$(pwd)/out ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- KCFLAGS=-mno-android VARIANT_DEFCONFIG=sdm450_sec_j8y18lte_swa_open_defconfig sdm450_sec_defconfig SELINUX_DEFCONFIG=selinux_defconfig SELINUX_LOG_DEFCONFIG=selinux_log_defconfig 
 
 make -j12 -C $(pwd) O=$(pwd)/out ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- KCFLAGS=-mno-android
