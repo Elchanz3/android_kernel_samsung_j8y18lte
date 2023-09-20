@@ -1,7 +1,7 @@
 
 #!/bin/bash
 
-export PATH=$(pwd)/../PLATFORM/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin:$PATH
+export PATH=/home/chanz22/Imagens/aarch64-linux-android-4.9/bin:$PATH
 # export SEC_BUILD_OPTION_HW_REVISION=02
 
 mkdir out
