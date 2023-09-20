@@ -99,3 +99,6 @@ all.config
 
 # fetched Android config fragments
 android/configs/android-*.cfg
+out/arch/arm64/include/generated/asm/termbits.h
+
+/out
