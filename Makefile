@@ -966,7 +966,7 @@ $(vmlinux-dirs): prepare scripts
 	$(Q)$(MAKE) $(build)=$@
 
 define filechk_kernel.release
-	echo "$(KERNELVERSION)$$($(CONFIG_SHELL) $(srctree)/scripts/setlocalversion $(srctree))-Element4-rc1"
+	echo "$(KERNELVERSION)$$($(srctree))-Element4-rc1"
 endef
 
 # Store (new) KERNELRELEASE string in include/config/kernel.release
