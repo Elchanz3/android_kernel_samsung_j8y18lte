@@ -912,14 +912,13 @@
 		reg-names = "cc_base";
 		vdd_gfx-supply = <&gfx_vreg_corner>;
 		qcom,gfxfreq-corner =
-			 <         0   0 >,
 			 < 133330000   1 >,  /* Min SVS    */
 			 < 216000000   2 >,  /* Low SVS    */
 			 < 320000000   3 >,  /* SVS        */
 			 < 400000000   4 >,  /* SVS Plus   */
-			 < 510000000   5 >,  /* NOM        */
-			 < 610000000   6 >,  /* Nom Plus   */
-			 < 760000000   7 >,  /* Turbo      */
+			 < 780000000   5 >,  /* NOM        */
+			 < 790000000   6 >,  /* Nom Plus   */
+			 < 800000000   7 >,  /* Turbo      */
 			 < 850000000   8 >;  /* Turbo Plus */
 		#clock-cells = <1>;
 	};
