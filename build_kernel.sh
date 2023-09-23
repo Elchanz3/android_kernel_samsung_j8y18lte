@@ -1,12 +1,12 @@
 
 #!/bin/bash
 
-export PATH=/home/chanz22/tc/gcc-linaro-6.5.0/bin:$PATH
+export PATH=/home/chanz22/tc/gcc-linao-6.5.0/bin:$PATH
 # export SEC_BUILD_OPTION_HW_REVISION=02
 
 mkdir out
 
-make -j12 -C $(pwd) O=$(pwd)/out ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- VARIANT_DEFCONFIG=j8y18lte_defconfig
+make -C $(pwd) O=$(pwd)/out ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- VARIANT_DEFCONFIG=j8y18lte_defconfig sdm450_se_defconfig SELINUX_DEFCONFIG=selinux_defconfig SELINUX_LOG_DEFCONFIG=selinux_log_defconfig
 
 make -j12 -C $(pwd) O=$(pwd)/out ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-
 
@@ -19,5 +19,3 @@ if [[ -f "$IMAGE" ]]; then
 	cp $DTB_OUT AnyKernel3/Image.gz-dtb
 	cd AnyKernel3
 	zip -r9 Element4-OC-J810xx-beta.zip .
-fi
-
