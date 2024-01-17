@@ -12,13 +12,11 @@ make -C $(pwd) O=$(pwd)/out ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- VARIANT_
 
 make -j12 -C $(pwd) O=$(pwd)/out ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-
 
-IMAGE="out/arch/arm64/boot/Image.gz"
-DTB_OUT="out/arch/arm64/boot/Image.gz-dtb"
+IMAGE="out/arch/arm64/boot/Image.gz-dtb"
 
 if [[ -f "$IMAGE" ]]; then
 	rm AnyKernel3/*.zip > /dev/null 2>&1
-	cp $IMAGE AnyKernel3/Image.gz
-	cp $DTB_OUT AnyKernel3/Image.gz-dtb
+	cp $IMAGE AnyKernel3/Image.gz-dtb
 	cd AnyKernel3
 	zip -r9 Kernel-J8-beta.zip .
 fi
